@@ -1,6 +1,8 @@
 ﻿
-/* Sine Wave script
- * written by Nick Yonge
+/* SineWave
+ * v1.0
+ * 
+ * Written by Nick Yonge
  * 
  * Copyright 2016 Nick Yonge
  * 
@@ -91,11 +93,11 @@ public class SineWave : MonoBehaviour {
 	/// </summary>
 	public bool Local = true;
 	/// <summary>
-	/// Randomize this sine wave on start, or whenever the amplitude or omega is changed?
+	/// Randomize this sine wave on start?
 	/// </summary>
 	public bool RandomizeOnStart = false;
 	/// <summary>
-	/// Randomize this sine wave on start, or whenever the amplitude or omega is changed?
+	/// Randomize this sine wave whenever the amplitude or omega is changed?
 	/// </summary>
 	public bool RandomizeOnChange = false;
 
