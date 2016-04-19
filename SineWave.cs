@@ -159,8 +159,9 @@ public class SineWave : MonoBehaviour {
 		//		Uncomment and replace "GameData.GamePaused()" with whatever bool/function/reference/etc
 		//		you use to check if the game is paused
 		//		(assuming you don't just use timeScale = 0, which would affect all sine waves)
-		if (!IgnoreGameplayPause && GameData.GamePaused ())
-			return;
+		
+		//if (!IgnoreGameplayPause && GameData.GamePaused ())
+		//	return;
 		
 		//update the index
 		if (UseGlobalIndex) {
