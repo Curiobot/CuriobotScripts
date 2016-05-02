@@ -1,6 +1,6 @@
 ﻿
 /* SineWave
- * v1.0
+ * v1.1
  * 
  * Written by Nick Yonge
  * 
@@ -24,7 +24,7 @@
 
  4) You're good to go! Play around with other properties or read the summaries below for more details.
 
- NOTE: For IgnoreGameplayPause to work, you need to un-comment the line it appears in, and add your own check to see if the game's paused.
+ NOTE: For IgnoreGameplayPause to work, you need to un-comment the line it appears in (line 162), and add your own check to see if the game's paused.
 
 */
 
@@ -147,21 +147,19 @@ public class SineWave : MonoBehaviour {
 	/// </summary>
 	public void Randomize() {
 		if (!UseGlobalIndex) {
-			index.x = Random.Range (0f, Mathf.Abs(Omega.x * 2f));
-			index.y = Random.Range (0f, Mathf.Abs(Omega.y * 2f));
-			index.z = Random.Range (0f, Mathf.Abs(Omega.z * 2f));
+			index.x = Random.Range (0f, Mathf.Abs ((Omega.x * 1000f) * 2f));
+			index.y = Random.Range (0f, Mathf.Abs ((Omega.y * 1000f) * 2f));
+			index.z = Random.Range (0f, Mathf.Abs ((Omega.z * 1000f) * 2f));
 		}
 	}
 
-	private void Update () {
+	private void LateUpdate () {
 		//check for pause
 		//		NOTE: 
 		//		Uncomment and replace "GameData.GamePaused()" with whatever bool/function/reference/etc
 		//		you use to check if the game is paused
 		//		(assuming you don't just use timeScale = 0, which would affect all sine waves)
-		
-		//if (!IgnoreGameplayPause && GameData.GamePaused ())
-		//	return;
+		//if (!IgnoreGameplayPause && GameData.GamePaused ()) { return; }
 		
 		//update the index
 		if (UseGlobalIndex) {
